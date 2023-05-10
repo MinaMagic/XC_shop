@@ -1,0 +1,239 @@
+body {
+    max-width: 540px;
+    min-width: 320px;
+    width: 100%;
+    height: 1000px;
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+    color: #000;
+    background: #f2f2f2;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+* {
+    box-sizing: border-box;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+img {
+    vertical-align: middle;
+}
+.search-index {
+    display: flex;
+    position: fixed;
+    top: 0;
+    /* 不写left就不用写居中 */
+    /* 居中做法：left50%+trnaslateX(-50%) */
+    width: 100%;
+    height: 44px;
+    min-width: 320px;
+    max-width: 540px;
+    padding: 0 5px;
+    align-items: center;
+    /* margin: 0 auto; 有定位margin是无效的 */
+    background-color: #f6f6f6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.search {
+    position: relative;
+    flex: 1;
+    height: 26px;
+    line-height: 26px;
+    padding-left: 25px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    font-size: 12px;
+    color: #666;
+}
+.search::before {
+    content: '';
+    /* 有定位可以不加block */
+    /* display: block; */
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/sprite.png) no-repeat -58px -279px;
+    background-size: 104px auto;
+}
+.user {
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    color: #2eaae0;
+    font-size: 12px;
+}
+.user::before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url(../images/sprite.png) no-repeat -58px -193px;
+    background-size: 104px auto;
+    /* 往上一点、左右自动 */
+    margin: 4px auto -2px;
+}
+.focus {
+    display: flex;
+    margin-top: 44px;
+}
+.focus img {
+    width: 100%;
+}
+.local-nav {
+    display: flex;
+    height: 64px;
+    align-items: center;
+    margin: 5px 5px;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+.local-nav li {
+    flex: 1;
+}
+.local-nav li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.local-nav li [class^="local-nav-icon"] {
+    width: 32px;
+    height: 32px;
+    background: url(../images/localnav_bg.png) no-repeat 0 0;
+    background-size: 32px auto;
+}
+.local-nav li .local-nav-icon-icon2 {
+    background-position: 0 -32px;
+}
+
+.local-nav li .local-nav-icon-icon3 {
+    background-position: 0 -64px;
+}
+
+.local-nav li .local-nav-icon-icon4 {
+    background-position: 0 -96px;
+}
+
+.local-nav li .local-nav-icon-icon5 {
+    background-position: 0 -128px;
+}
+.local-nav li span {
+    color: #000;
+    font-size: 12px;
+}
+.nav {
+    border-radius: 8px;
+    overflow: hidden;
+}
+.nav-common {
+    display: flex;
+    margin-bottom: 2px;
+}
+.nav-common:nth-child(1) {
+    background: -webkit-linear-gradient(left,#fa5b55,#fa954e);
+}
+.nav-common:nth-child(2) {
+    background: -webkit-linear-gradient(left,#4b91ed,#52b9ed);
+}
+.nav-common:nth-child(3) {
+    background: -webkit-linear-gradient(left,#36c3a7,#6bd55c);
+}
+.nav-items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.nav-items a {
+    width: 100%;
+    height: 90px;
+    color: #ffffff;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    text-align: center;
+    line-height: 45px;
+}
+.nav-items:nth-child(1) a {
+    border: 0;
+    background: url(../images/hotel.png) no-repeat bottom center;
+    background-size: 121px auto;
+}
+.nav-common div:nth-child(n+2) a {
+    height: 45px;
+    line-height: 45px;
+}
+.nav-common div:nth-child(n+2) a:nth-child(2) {
+    border-bottom: none;
+}
+.subnav-entry {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #ffffff;
+    margin: 3px 4px;
+    padding: 5px 0;
+    border-radius: 8px;
+}
+.subnav-entry li {
+    /* %相对父级来说 */
+    flex: 20%;
+}
+.subnav-entry li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+}
+.subnav-entry-icon {
+    width: 24px;
+    height: 24px;
+    margin-top: 4px;
+    background: url(../images/subnav-bg.png) no-repeat 0 0;
+    background-size: 24px auto;
+}
+.sales-box {
+    border-top: 1px solid #ccc;
+}
+.sales-hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 44px;
+    margin-bottom: 1px;
+    background-color: #fcfffc;
+}
+.sales-hd span{
+    width: 75px;
+    height: 21px;
+    margin-left: 5px;
+    background: url(../images/hot.png) no-repeat 0 -17.5px;
+    background-size: 79px auto;
+}
+.sales-hd a {
+    width: 120px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 10px;
+    text-align: center;
+    background: -webkit-linear-gradient(left,#f3666d,#fd83c1) ;
+    color: #fff;
+}
+.sales-bd ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.sales-bd ul li {
+    flex: 50%;
+    margin-bottom: 1px;
+}
+.sales-bd ul li a img{
+    width: 100%;
+}
